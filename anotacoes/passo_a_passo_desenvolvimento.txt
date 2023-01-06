@@ -1,0 +1,59 @@
+1º) Instalar o axios;
+2º) Montar estrutura base;
+    2.1) Imports;
+    2.2) Função principal (App);
+    2.3) (opcional) Fazer teste básico, na View principal, para verificar se está mostrando na tela.
+3º) Criar a pasta "src", na qual iremos criar nossos componentes e nossos services;
+4º) Na pasta "services", criaremos o arquivo que cuidará da API (api.js);
+    4.1) Importar o Axios;
+    4.2) Criar nossa baseURL;
+    4.3) Exportar nossa API;
+    4.4) Importar nossa API no App.js;
+5º) Criar layout;
+    5.1) Input;
+    5.2) Botões;
+    5.3) Entre outros...
+6º) Ao invés de ter uma View principal, como nos últimos projetos, teremos um SafeAreaView, que garante que nossa aplicação não fique sobre a statusbar, como acontece no iOS.
+    6.1) Teremos uma estrutura semelhante à esta:
+        return (
+            <SafeAreaView style={styles.container}>
+                //...
+            </SafeAreaView>
+        )
+7º) Dentro do SafeAreaView, teremos uma View (já aplicar a devida estilização nela - pode ser em linha mesmo).
+    7.1) Esta View será responsável por abranger os itens doo passo 5;
+    7.2) Teremos um texto para indicar o que queremos que o usuário indique  (no caso, é o CEP) e um TextIpunt para que o usuário insira o CEP desejado;
+        7.2.1) Passar as devidas propriedades ao TextIpunt.
+8º) Criar um useState para armazenar e/ou alterar valor do CEP digitado;
+9º) Estilizar o que temos até agora;
+10º) Fora da nossa View - mas dentro do SafeAreaView, criar uma View, que ficará encarregada dos botões;
+    10.1) Botão de busca;
+    10.2) Botão de limpeza;
+    10.3) Estilizar;
+11º) Criar uma View para mostrar o resultado;
+    11.1) Colocar nos campos que serão mostrados no resultado;
+    11.2) Estilizar;
+12º) Montar função de limpar;
+    12.1) Quando clicarmos no botão "Limpar", queremos que o input seja zerado;
+        12.1.1) Para isto, setamos o CEP para vazio.
+    12.2) Caso o usuário tenha fechado o teclado ao limpar o input, queremos que o teclado volte à tela para ficar como referência;
+        12.2.1) Para tal, precisamos referenciar o nosso TextInput.
+            12.2.1.1) Usar o useRef.
+13º) No botão de busca, devemos atrelar o clique à busca na API;
+    13.1) Deverá ser uma função ASSÍNCRONA;
+    13.2) Verificar se o usuário digitou algo;
+        13.2.1) Se o CEP estiver vazio, mostra uma mensagem de erro;
+            13.1.1.1) Depois, limpamos o CEP.
+14º) Buscar dados na API...
+    14.1) Como a nossa requisição pode falhar, podemos dar mais segurança aos usuários.
+        14.1.1) Usamos um bloco chamado try/catch (try: tentar; catch: erro).
+            14.1.1.1) O nosso app tentará (try) fazer a requisição e, se der certo, executa o bloco do try; senão, executa o bloco do catch;
+                14.1.1.1.1) Se der certo, busca na API.
+                14.1.1.1.2) No método 'get', passamos a variável "cep" para ser o dado a ser buscado na API.
+15º) Queremos que, quando a busca for feita, o nosso app feche o teclado e mostre as informações na tela;
+    15.1) Importar o Keyboard, do React Native;
+16º) Criar um useState para mostrar as informações do CEP buscado;
+    16.1) Substituir as informações atuais pelas informações do CEP localizado;
+    16.2) Na área do resultado, passar as propriedades que queremos mostrar deste CEP encontrado;
+        16.2.1) Só será mostrado estas informações, quando a busca não for nula.
+    16.3) No botão de limpeza, setamos o CEP encontrado.

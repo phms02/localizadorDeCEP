@@ -1,0 +1,25 @@
+-> Para fazer requisições HTTP dentro dos nossos apps, instalar o Axios:
+    -> Para instalar:
+        -> Para usar no emulador:
+            npm install axios
+        -> Para usar no Expo Go:
+            expo install axios
+    -> Para importar:
+        import axios from "axios"
+
+-> Linear Gradient:
+    -> Para instalar:
+        -> Para usar no emulador:
+            -> Automático:
+                react-native link react-native-linear-gradient
+            -> Usando Yarn:
+                yarn add react-native-linear-gradient
+            -> Usando npm:
+                npm install react-native-linear-gradient --save
+            -> Expo Go:
+                expo install expo-linear-gradient
+            -> React Native >= 0.60:
+                npx pod-install
+    -> Para importar:
+        import LinearGradient from "react-native-linear-gradient"
+        expo-linear-gradient
