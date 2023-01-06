@@ -12,3 +12,7 @@ HTML, CSS e JavaScript, React e React Native.
 
 ## Conhecimentos adquirdos durante o desenvolvimento:
 Aprendi a fazer a contagem do tempo usansando laços de repetição e iterações, fazer requisições HTTP e trabalhar com APIs. Fiz o meu terceiro projeto utilizando React.js e React Native.
+
+
+https://user-images.githubusercontent.com/83307765/210913700-5c36d01a-6e50-41a5-bf7e-5b07527dbdaa.mp4
+
