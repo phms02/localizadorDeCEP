@@ -1,68 +1,35 @@
 import React, { useState, useEffect, useRef } from "react"
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, SafeAreaView, Keyboard} from "react-native"
-// O SafeAreaView garante que nossa aplicação não fique sobre a statusbar, como acontece no iOS.
 
-// Importando o Linear Gradient...
 import LinearGradient from "react-native-linear-gradient"
 
-// Importando nossa API...
 import api from "./src/services/api"
 
 export default function App() {
-  // Criando as nossas useStates...
-  // Criando um useState para armazenar e/ou alterar valor do CEP digitado...
-  const [cep, setCep] = useState("")
-
-  // Criando um useState para mostrar as informações do CEP buscado...
-  const [cepEncontrado, setCepEncontrado] = useState(null)
-
-  // Criando um useRef para usar o TextInput como referência -> caso o usuário tenha fechado o teclado ao limpar o input, queremos que o teclado volte à tela para ficar como referência...
-  const inputRef = useRef(null)
-
-  // Função de busca do CEP -> busca na API o CEP inserido no input...
+  const [cep, setCep] = useState("");
+  const [cepEncontrado, setCepEncontrado] = useState(null);
+  const inputRef = useRef(null);
+  
   async function buscar() {
-    // Verificando se o usuário digitou algo...
-    // Se o CEP estiver vazio, mostra uma mensagem de erro...
     if(cep === "") {
-      alert("Digite um CEP válido!")
-
-      // Limpando o CEP...
-      setCep("")
-
-      return
+      alert("Digite um CEP válido!");
+      setCep("");
+      return;
     }
 
     try {
-      // Buscando na API...
-      // Usamos o método 'get' para buscar os dados da API. Nele, passamos a variável "cep" para ser o dado a ser buscado na API...
-      const response = await api.get(`/${cep}/json`)
-
-      /**
-        *Teste para verificar se estamos obtendo alguma resposta da API...
-        *Dentro de 'data' estão presentes os dados da API...
-      */
-      // console.log(response.data)
-
-      // Substituindo as informações atuais pelas informações do CEP localizado...
-      setCepEncontrado(response.data)
-
-      // Fechando o teclado do usuário ao ser feito a busca...
-      Keyboard.dismiss()  // Garante o fechamento do teclado
+      const response = await api.get(`/${cep}/json`);
+      setCepEncontrado(response.data);     
+      Keyboard.dismiss();
     } catch(erro) {
       console.log(`ERROR ${erro}!`)
     }
   }
 
-  // Função de limpeza do input -> quando clicarmos no botão "Limpar", queremos que o input seja zerado...
   function limpar() {
-    // Setamos o CEP para vazio...
     setCep("")
-
-    // Setando o CEP encontrado...
-    setCepEncontrado(null)
-
-    // Chamando o inputRef...
-    inputRef.current.focus()
+    setCepEncontrado(null);
+    inputRef.current.focus();
   }
 
   return (
