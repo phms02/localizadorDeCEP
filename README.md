@@ -8,7 +8,10 @@ Consumi a API do Via CEP (link: https://viacep.com.br/ws/79560000/json).
 Neste projeto, o objetivo não foi trabalhar com a responsividade.
 
 ## Tecnologias utilizadas:
-HTML, CSS e JavaScript, React e React Native.
+<div align="center">
+  <img alt="JavaScript" height="35" width="40" align="center" src="https://skillicons.dev/icons?i=js">
+  <img alt="React Native" height="40" width="40" align="center" src="https://skillicons.dev/icons?i=react">
+</div>
 
 ## Conhecimentos adquirdos durante o desenvolvimento:
 Aprendi a fazer a contagem do tempo usansando laços de repetição e iterações, fazer requisições HTTP e trabalhar com APIs. Fiz o meu terceiro projeto utilizando React.js e React Native.
