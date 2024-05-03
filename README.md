@@ -3,7 +3,7 @@
 ## Descrição do projeto:
 O objetivo deste projeto foi desenvolver um <b>localizador de CEP</b>, no qual o usuário insere o CEP desejado e clica em "Buscar CEP": se o CEP exisitr, retorna as informações, senão retorna os campos em branco. Caso o input seja em branco, retorna um alert com a mensagem de CEP inválido.
 
-Consumi a API do Via CEP (link: https://viacep.com.br/ws/79560000/json).
+Consumi a API do [Via CEP](https://viacep.com.br/ws/79560000/json).
 
 Neste projeto, o objetivo não foi trabalhar com a responsividade.
 
